@@ -21,7 +21,7 @@ public class FactureController {
     public Iterable listFactures(){
 	return factureService.findAll();
 	}
-	@RequestMapping(value = "/saveFacture", method = RequestMethod.POST)
+	@RequestMapping(value = "/facture", method = RequestMethod.POST)
     public Facture saveFacture(@RequestBody Facture facture){
 	return factureService.save(facture);
 	}

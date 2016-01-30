@@ -30,7 +30,7 @@ public class SupplierController {
         return supplierService.getProductById(id);
     }
 
-    @RequestMapping(value="saveSupplier",method = RequestMethod.POST)
+    @RequestMapping(value="supplier",method = RequestMethod.POST)
     public Supplier saveSupplier(Supplier supplier){
         return supplierService.save(supplier);
     }

@@ -22,7 +22,7 @@ public class OrderController {
     public Iterable listOrders(){
 	return orderService.findAll();
 	}
-	@RequestMapping(value = "/saveOrder", method = RequestMethod.POST)
+	@RequestMapping(value = "/order", method = RequestMethod.POST)
     public Order saveOrder(@RequestBody Order order){
 	return orderService.save(order);
 	}

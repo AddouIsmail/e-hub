@@ -21,7 +21,7 @@ public class ClientController {
     public Iterable listCLients(){
 	return clientService.findAll();
 	}
-	@RequestMapping(value = "/saveClient", method = RequestMethod.POST)
+	@RequestMapping(value = "/client", method = RequestMethod.POST)
     public Client saveClient(@RequestBody Client client){
 	return clientService.save(client);
 	}

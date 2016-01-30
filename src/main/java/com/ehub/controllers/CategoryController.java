@@ -20,7 +20,7 @@ public class CategoryController {
     public Iterable listCategories(){
 	return categoryService.findAll();
 	}
-	@RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
     public Category saveCategory(@RequestBody Category category){
 	return categoryService.save(category);
 	}

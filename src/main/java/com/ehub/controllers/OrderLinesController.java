@@ -27,7 +27,7 @@ public class OrderLinesController {
         return orderLinesService.getProductById(id);
     }
 
-    @RequestMapping(value = "/saveOrderLine",method = RequestMethod.POST)
+    @RequestMapping(value = "/orderLine",method = RequestMethod.POST)
     public OrderLines saveOrderLines(@RequestBody OrderLines orderLines){
         return orderLinesService.save(orderLines);
     }

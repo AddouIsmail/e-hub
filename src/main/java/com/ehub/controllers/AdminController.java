@@ -20,7 +20,7 @@ public class AdminController {
     public Iterable listAdmins(){
 	return adminService.findAll();
 	}
-	@RequestMapping(value = "/saveAdmin", method = RequestMethod.POST)
+	@RequestMapping(value = "/admin", method = RequestMethod.POST)
     public Admin saveAdmin(@RequestBody Admin admin){
 	return adminService.save(admin);
 	}
