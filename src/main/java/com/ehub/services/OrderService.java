@@ -8,7 +8,7 @@ import com.ehub.entities.Order;
 public interface OrderService {
     public Iterable findAll();
 
-    public Order getProductById(String id);
+    public Order getOrderById(String id);
 
     public Order save(Order order);
 }
