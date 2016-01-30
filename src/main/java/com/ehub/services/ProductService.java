@@ -1,5 +1,7 @@
 package com.ehub.services;
 
+import com.ehub.entities.Product;
+
 import java.util.Iterator;
 
 /**
@@ -7,4 +9,6 @@ import java.util.Iterator;
  */
 public interface ProductService {
     public Iterator findAll();
+
+    public Product save();
 }

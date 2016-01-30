@@ -1,9 +1,12 @@
 package com.ehub.entities;
 
+import org.springframework.data.annotation.Id;
+
 /**
  * Created by AyoubOlk on 30/01/2016.
  */
 public class Admin {
+    @Id
     private String id;
     private String firstName;
     private String lastName;
