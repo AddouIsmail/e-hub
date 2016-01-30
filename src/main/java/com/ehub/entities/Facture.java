@@ -12,7 +12,7 @@ public class Facture {
     private String idOrder;
     private String idPaymentMode;
     /** -------------------- **/
-    private String totalPrice;
+    private Double totalPrice;
 
     public String getId() {
         return id;
@@ -38,11 +38,11 @@ public class Facture {
         this.idPaymentMode = idPaymentMode;
     }
 
-    public String getTotalPrice() {
+    public Double getTotalPrice() {
         return totalPrice;
     }
 
-    public void setTotalPrice(String totalPrice) {
+    public void setTotalPrice(Double totalPrice) {
         this.totalPrice = totalPrice;
     }
 }

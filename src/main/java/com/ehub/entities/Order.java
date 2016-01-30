@@ -60,14 +60,6 @@ public class Order {
         this.orderDeadline = orderDeadline;
     }
 
-    public String getOrderState() {
-        return orderState;
-    }
-
-    public void setOrderState(String orderState) {
-        this.orderState = orderState;
-    }
-
     public String getShipLocation() {
         return shipLocation;
     }
