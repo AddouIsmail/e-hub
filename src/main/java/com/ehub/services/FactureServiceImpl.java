@@ -20,15 +20,27 @@ public class FactureServiceImpl implements FactureService{
 	}
 
 	@Override
-	public Facture getFactureById(String id) {
+	public Facture findById(String id) {
 		// TODO Auto-generated method stub
 		return factureRepository.findOne(id);
 	}
 
 	@Override
-	public Facture save(Facture facture) {
+	public Facture update(Facture facture) {
 		// TODO Auto-generated method stub
 		return factureRepository.save(facture);
+	}
+
+	@Override
+	public Facture insert(Facture facture) {
+		// TODO Auto-generated method stub
+		return factureRepository.insert(facture);
+	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return factureRepository.deleteById(id);
 	}
 
 }

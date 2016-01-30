@@ -27,11 +27,19 @@ public class SupplierController {
 
     @RequestMapping(value="/supplier/{id}",method = RequestMethod.GET)
     public Supplier getSupplierById(@PathVariable String id){
-        return supplierService.getProductById(id);
+        return supplierService.findById(id);
+    }
+    @RequestMapping(value="supplier",method = RequestMethod.GET)
+    public Supplier insertSupplier(Supplier supplier){
+        return supplierService.insert(supplier);
+    }
+    @RequestMapping(value="supplier",method = RequestMethod.PUT)
+    public Supplier updateSupplier(Supplier supplier){
+        return supplierService.update(supplier);
     }
 
-    @RequestMapping(value="supplier",method = RequestMethod.POST)
-    public Supplier saveSupplier(Supplier supplier){
-        return supplierService.save(supplier);
+    @RequestMapping(value="/supplier/{id}",method = RequestMethod.DELETE)
+    public Long deleteSupplierById(@PathVariable String id){
+        return supplierService.deleteById(id);
     }
 }

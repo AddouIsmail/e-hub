@@ -4,7 +4,9 @@ import com.ehub.entities.Category;
 
 public interface CategoryService {
     Iterable findAll();
-	public Category getCategoryById(String id);
-	public Category save(Category category);
+	public Category findById(String id);
+	public Category insert(Category category);
+	public Category update(Category category);
+	public Long deleteById(String id);
 	
 }

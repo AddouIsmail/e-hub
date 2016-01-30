@@ -17,15 +17,23 @@ public class AdminController {
 		this.adminService = adminService;
 	}
 	@RequestMapping(value = "/admins", method = RequestMethod.GET)
-    public Iterable listAdmins(){
+    public Iterable<Admin> listAdmins(){
 	return adminService.findAll();
 	}
 	@RequestMapping(value = "/admin", method = RequestMethod.POST)
-    public Admin saveAdmin(@RequestBody Admin admin){
-	return adminService.save(admin);
+    public Admin insertAdmin(@RequestBody Admin admin){
+	return adminService.insert(admin);
+	}
+	@RequestMapping(value = "/admin", method = RequestMethod.PUT)
+    public Admin updateAdmin(@RequestBody Admin admin){
+	return adminService.update(admin);
 	}
 	@RequestMapping(value = "/admin/{id}", method = RequestMethod.GET)
     public Admin getAdminById(@PathVariable String id){
-	return adminService.getAdminById(id);
+	return adminService.findById(id);
 	}
+	@RequestMapping(value = "/admin/{id}", method = RequestMethod.DELETE)
+    public Long deleteAdminById(@PathVariable String id){
+	return adminService.deleteById(id);
+	}	
 }

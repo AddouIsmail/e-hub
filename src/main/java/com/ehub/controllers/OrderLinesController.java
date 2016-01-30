@@ -24,11 +24,18 @@ public class OrderLinesController {
 
     @RequestMapping(value="/orderLine/{id}",method = RequestMethod.GET)
     public OrderLines getOrderLineById(@PathVariable String id){
-        return orderLinesService.getProductById(id);
+        return orderLinesService.findById(id);
     }
-
     @RequestMapping(value = "/orderLine",method = RequestMethod.POST)
-    public OrderLines saveOrderLines(@RequestBody OrderLines orderLines){
-        return orderLinesService.save(orderLines);
+    public OrderLines insertOrderLines(@RequestBody OrderLines orderLines){
+        return orderLinesService.insert(orderLines);
+    }
+    @RequestMapping(value = "/orderLine",method = RequestMethod.PUT)
+    public OrderLines updateOrderLines(@RequestBody OrderLines orderLines){
+        return orderLinesService.update(orderLines);
+    }
+    @RequestMapping(value="/orderLine/{id}",method = RequestMethod.DELETE)
+    public Long gdeleteOrderLinesById(@PathVariable String id){
+        return orderLinesService.deleteById(id);
     }
 }

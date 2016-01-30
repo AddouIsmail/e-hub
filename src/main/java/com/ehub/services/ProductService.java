@@ -10,8 +10,8 @@ import java.util.Iterator;
 public interface ProductService {
 
     public Iterable findAll();
-
-    public Product getProductById(String id);
-
-    public Product save(Product product);
+    public Product findById(String id);
+    public Product insert(Product product);
+    public Product update(Product product);
+    public Long deleteById(String id);
 }

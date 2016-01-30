@@ -7,8 +7,8 @@ import com.ehub.entities.Order;
  */
 public interface OrderService {
     public Iterable findAll();
-
-    public Order getOrderById(String id);
-
-    public Order save(Order order);
+    public Order findById(String id);
+    public Order update(Order order);
+    public Order insert(Order order);
+    public Long deleteById(String id);
 }

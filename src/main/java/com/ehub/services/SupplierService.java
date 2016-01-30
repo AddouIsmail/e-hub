@@ -7,8 +7,8 @@ import com.ehub.entities.Supplier;
  */
 public interface SupplierService {
     public Iterable findAll();
-
-    public Supplier getProductById(String id);
-
-    public Supplier save(Supplier supplier);
+    public Supplier findById(String id);
+    public Supplier insert(Supplier supplier);
+    public Supplier update(Supplier supplier);
+    public Long deleteById(String id);
 }

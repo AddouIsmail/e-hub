@@ -23,12 +23,19 @@ public class OrderController {
 	return orderService.findAll();
 	}
 	@RequestMapping(value = "/order", method = RequestMethod.POST)
-    public Order saveOrder(@RequestBody Order order){
-	return orderService.save(order);
+    public Order insertOrder(@RequestBody Order order){
+	return orderService.insert(order);
+	}
+	@RequestMapping(value = "/order", method = RequestMethod.PUT)
+    public Order updateOrder(@RequestBody Order order){
+	return orderService.update(order);
 	}
 	@RequestMapping(value = "/order/{id}", method = RequestMethod.GET)
     public Order getOrderById(@PathVariable String id){
-	return orderService.getOrderById(id);
+	return orderService.findById(id);
 	}
-
+	@RequestMapping(value = "/order/{id}", method = RequestMethod.DELETE)
+    public Long deleteOrderById(@PathVariable String id){
+	return orderService.deleteById(id);
+	}
 }

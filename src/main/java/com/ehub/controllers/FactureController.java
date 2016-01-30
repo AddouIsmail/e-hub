@@ -22,13 +22,20 @@ public class FactureController {
 	return factureService.findAll();
 	}
 	@RequestMapping(value = "/facture", method = RequestMethod.POST)
-    public Facture saveFacture(@RequestBody Facture facture){
-	return factureService.save(facture);
+    public Facture insertFacture(@RequestBody Facture facture){
+	return factureService.insert(facture);
+	}
+	@RequestMapping(value = "/facture", method = RequestMethod.PUT)
+    public Facture updateFacture(@RequestBody Facture facture){
+	return factureService.update(facture);
 	}
 	@RequestMapping(value = "/facture/{id}", method = RequestMethod.GET)
     public Facture getFactureById(@PathVariable String id){
-	return factureService.getFactureById(id);
+	return factureService.findById(id);
 	}
-	
+	@RequestMapping(value = "/facture/{id}", method = RequestMethod.DELETE)
+    public Long deleteFactureById(@PathVariable String id){
+	return factureService.deleteById(id);
+	}
 
 }
