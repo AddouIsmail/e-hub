@@ -53,12 +53,14 @@ public class EHubApplication implements CommandLineRunner{
 			c.setId(""+i);
 			c.setName("Catégorie"+i);
 			c.setSuperCategory("SuperCategory");
+			categoryRepository.deleteAll();
 			categoryRepository.save(c);
 		}
 		for(int i=0; i<100 ; i++){
 			s.setAddress("Adresse "+i);
 			s.setName("Name "+i);
 			s.setPhoneNumber("PhoneNumber +212 6 5365"+i);
+			supplierRepository.deleteAll();
 			supplierRepository.save(s);
 		}
 		for(int i=0; i<200 ; i++){
@@ -72,11 +74,13 @@ public class EHubApplication implements CommandLineRunner{
 			p.setShippedPrice(i*4);
 			p.setQuantity(i);
 			p.setId(""+i);
+			productRepository.deleteAll();
 			productRepository.save(p);
 		}
 		for(int i=0; i<3 ; i++){
 			pm.setId(""+i);
 			pm.setModality("modality "+i);
+			payePaymentModeRepository.deleteAll();
 			payePaymentModeRepository.save(pm);
 		}
 		for(int i=0; i<1000 ; i++){
@@ -84,6 +88,7 @@ public class EHubApplication implements CommandLineRunner{
 			ol.setQuantity(i);
 			ol.setIdOrder(""+(int)i%100);
 			ol.setIdProduct(""+(int) i%200);
+			orderLinesRepository.deleteAll();
 			orderLinesRepository.save(ol);
 		}
 		for(int i=0; i<100 ; i++){
@@ -94,6 +99,7 @@ public class EHubApplication implements CommandLineRunner{
 			o.setOrderDeadline(i);
 			o.setShipLocation("ship location"+i);
 			o.setShippingPrice(i*3);
+			orderRepository.deleteAll();
 			orderRepository.save(o);
 		}
 		for(int i=0; i<1000 ; i++){
@@ -101,6 +107,7 @@ public class EHubApplication implements CommandLineRunner{
 			f.setIdOrder(""+i);
 			f.setIdPaymentMode(""+(i%3)+1);
 			f.setTotalPrice((double) (i *(7/3)));
+			factureRepository.deleteAll();
 			factureRepository.save(f);
 		}
 		for(int i=0; i<100 ; i++){
@@ -117,6 +124,7 @@ public class EHubApplication implements CommandLineRunner{
 			cli.setPhoneNumber("+212 6 5645"+i);
 			cli.setPicture("C:\\Photos");
 			cli.setSex("M");
+			clientRepository.deleteAll();
 			clientRepository.save(cli);
 		}
 
