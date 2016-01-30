@@ -25,14 +25,22 @@ public class ProductController {
     public Iterable listProducts(){
         return productService.findAll();
     }
+    @RequestMapping(value="/products",method= RequestMethod.POST)
+    public Product insertProduct(Product product){
+        return productService.insert(product);
+    }
 
     @RequestMapping(value="/product/{id}",method= RequestMethod.GET)
     public Product getProductById(@PathVariable String id){
-        return productService.getProductById(id);
+        return productService.findById(id);
     }
 
-    @RequestMapping(value="/SaveProduct",method=RequestMethod.POST)
-    public Product SaveProduct(@RequestBody Product product){
-        return productService.save(product);
+    @RequestMapping(value="/product",method=RequestMethod.PUT)
+    public Product updateProduct(@RequestBody Product product){
+        return productService.update(product);
+    }
+    @RequestMapping(value="/product",method=RequestMethod.DELETE)
+    public Long deleteProductById(@PathVariable String id){
+        return productService.deleteById(id);
     }
 }

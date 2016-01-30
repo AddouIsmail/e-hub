@@ -23,12 +23,24 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getProductById(String id) {
+    public Product findById(String id) {
         return productRepository.findOne(id);
     }
 
     @Override
-    public Product save(Product product) {
+    public Product update(Product product) {
         return productRepository.save(product);
     }
+
+	@Override
+	public Product insert(Product product) {
+		// TODO Auto-generated method stub
+		return productRepository.insert(product);
+	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return productRepository.deleteById(id);
+	}
 }

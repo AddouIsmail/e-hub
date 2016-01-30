@@ -21,13 +21,21 @@ public class ClientController {
     public Iterable listCLients(){
 	return clientService.findAll();
 	}
-	@RequestMapping(value = "/saveClient", method = RequestMethod.POST)
-    public Client saveClient(@RequestBody Client client){
-	return clientService.save(client);
+	@RequestMapping(value = "/client", method = RequestMethod.POST)
+    public Client insetClient(@RequestBody Client client){
+	return clientService.insert(client);
+	}
+	@RequestMapping(value = "/client", method = RequestMethod.PUT)
+    public Client updateClient(@RequestBody Client client){
+	return clientService.update(client);
 	}
 	@RequestMapping(value = "/client/{id}", method = RequestMethod.GET)
     public Client getClientById(@PathVariable String id){
-	return clientService.getClientById(id);
+	return clientService.findById(id);
+	}
+	@RequestMapping(value = "/client/{id}", method = RequestMethod.DELETE)
+    public Long deleteClientById(@PathVariable String id){
+	return clientService.deleteById(id);
 	}
 	
 

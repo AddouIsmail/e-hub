@@ -7,6 +7,9 @@ import com.ehub.entities.Admin;
  */
 public interface AdminService {
     Iterable findAll();
-    public Admin getAdminById(String id);
-	public Admin save(Admin admin);
+    public Admin findById(String id);
+    public Admin insert(Admin admin);
+	public Admin update(Admin admin);
+	public Long deleteById(String id);
+	public Admin findByLogin(String login);
 }

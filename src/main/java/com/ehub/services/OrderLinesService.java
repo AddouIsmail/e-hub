@@ -9,8 +9,8 @@ import org.springframework.stereotype.Service;
 @Service
 public interface OrderLinesService {
     public Iterable findAll();
-
-    public OrderLines getProductById(String id);
-
-    public OrderLines save(OrderLines orderlines);
+    public OrderLines findById(String id);
+    public Long deleteById(String id);
+    public OrderLines insert(OrderLines orderlines);
+    public OrderLines update(OrderLines orderlines);
 }

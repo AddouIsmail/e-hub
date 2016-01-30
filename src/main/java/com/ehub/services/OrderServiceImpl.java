@@ -21,14 +21,20 @@ public class OrderServiceImpl implements OrderService {
     public Iterable findAll() {
         return orderRepository.findAll();
     }
-
     @Override
-    public Order getOrderById(String id) {
+    public Order findById(String id) {
         return orderRepository.findOne(id);
     }
-
+    public Order insert(Order order) {
+        return orderRepository.insert(order);
+    }
     @Override
-    public Order save(Order order) {
+    public Order update(Order order) {
         return orderRepository.save(order);
     }
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return orderRepository.deleteById(id);
+	}
 }

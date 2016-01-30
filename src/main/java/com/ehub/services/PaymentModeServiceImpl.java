@@ -24,12 +24,24 @@ public class PaymentModeServiceImpl implements PaymentModeService {
     }
 
     @Override
-    public PaymentMode getProductById(String id) {
+    public PaymentMode findById(String id) {
         return paymentModeRepository.findOne(id);
     }
 
     @Override
-    public PaymentMode save(PaymentMode paymentmode) {
+    public PaymentMode update(PaymentMode paymentmode) {
         return paymentModeRepository.save(paymentmode);
     }
+
+	@Override
+	public PaymentMode insert(PaymentMode paymentmode) {
+		// TODO Auto-generated method stub
+		return paymentModeRepository.insert(paymentmode);
+	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return paymentModeRepository.deleteById(id);
+	}
 }

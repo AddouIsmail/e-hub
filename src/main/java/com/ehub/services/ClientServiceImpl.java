@@ -20,15 +20,33 @@ public class ClientServiceImpl  implements ClientService{
 	}
 
 	@Override
-	public Client getClientById(String id) {
+	public Client findById(String id) {
 		// TODO Auto-generated method stub
 		return clientRepository.findOne(id);
 	}
 
 	@Override
-	public Client save(Client client) {
+	public Client update(Client client) {
 		// TODO Auto-generated method stub
 		return clientRepository.save(client);
+	}
+
+	@Override
+	public Client findByLogin(String login) {
+		// TODO Auto-generated method stub
+		return clientRepository.findByLogin(login);
+	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return clientRepository.deleteById(id);
+	}
+
+	@Override
+	public Client insert(Client client) {
+		// TODO Auto-generated method stub
+		return clientRepository.insert(client);
 	}
 
 }

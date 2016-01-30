@@ -20,14 +20,20 @@ public class CategoryController {
     public Iterable listCategories(){
 	return categoryService.findAll();
 	}
-	@RequestMapping(value = "/saveCategory", method = RequestMethod.POST)
-    public Category saveCategory(@RequestBody Category category){
-	return categoryService.save(category);
+	@RequestMapping(value = "/category", method = RequestMethod.POST)
+    public Category insertCategory(@RequestBody Category category){
+	return categoryService.insert(category);
+	}
+	@RequestMapping(value = "/category", method = RequestMethod.PUT)
+    public Category updateCategory(@RequestBody Category category){
+	return categoryService.update(category);
 	}
 	@RequestMapping(value = "/category/{id}", method = RequestMethod.GET)
     public Category getCategoryById(@PathVariable String id){
-	return categoryService.getCategoryById(id);
+	return categoryService.findById(id);
 	}
-	
-
+	@RequestMapping(value = "/category/{id}", method = RequestMethod.DELETE)
+    public Long deleteCategoryById(@PathVariable String id){
+	return categoryService.deleteById(id);
+	}
 }

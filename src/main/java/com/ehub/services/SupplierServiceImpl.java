@@ -23,12 +23,24 @@ public class SupplierServiceImpl implements SupplierService {
     }
 
     @Override
-    public Supplier getProductById(String id) {
+    public Supplier findById(String id) {
         return supplierRepository.findOne(id);
     }
 
     @Override
-    public Supplier save(Supplier supplier) {
+    public Supplier update(Supplier supplier) {
         return supplierRepository.save(supplier);
     }
+
+	@Override
+	public Supplier insert(Supplier supplier) {
+		// TODO Auto-generated method stub
+		return supplierRepository.insert(supplier);
+	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return supplierRepository.deleteById(id);
+	}
 }

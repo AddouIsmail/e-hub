@@ -24,12 +24,26 @@ public class OrderLinesServiceImpl implements OrderLinesService {
     }
 
     @Override
-    public OrderLines getProductById(String id) {
+    public OrderLines findById(String id) {
         return orderLinesRepository.findOne(id);
     }
 
     @Override
-    public OrderLines save(OrderLines orderlines) {
+    public OrderLines update(OrderLines orderlines) {
         return orderLinesRepository.save(orderlines);
     }
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return orderLinesRepository.deleteById(id);
+	}
+
+	@Override
+	public OrderLines insert(OrderLines orderlines) {
+		// TODO Auto-generated method stub
+		return orderLinesRepository.insert(orderlines);
+	}
+
+	
 }

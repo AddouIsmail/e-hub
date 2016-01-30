@@ -20,15 +20,27 @@ public class CategoryServiceImpl implements CategoryService{
 	}
 
 	@Override
-	public Category getCategoryById(String id) {
+	public Category findById(String id) {
 		// TODO Auto-generated method stub
 		return categoryRepository.findOne(id);
 	}
 
 	@Override
-	public Category save(Category category) {
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return categoryRepository.deleteById(id);
+	}
+
+	@Override
+	public Category update(Category category) {
 		// TODO Auto-generated method stub
 		return categoryRepository.save(category);
+	}
+
+	@Override
+	public Category insert(Category category) {
+		// TODO Auto-generated method stub
+		return categoryRepository.insert(category);
 	}
 
 }

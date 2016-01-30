@@ -24,14 +24,34 @@ public class AdminServiceImpl implements AdminService {
     }
 
 	@Override
-	public Admin getAdminById(String id) {
+	public Admin findById(String id) {
 		// TODO Auto-generated method stub
 		return adminRepository.findOne(id);
 	}
 
 	@Override
-	public Admin save(Admin admin) {
+	public Admin update(Admin admin) {
 		// TODO Auto-generated method stub
 		return adminRepository.save(admin);
 	}
+
+	@Override
+	public Long deleteById(String id) {
+		// TODO Auto-generated method stub
+		return adminRepository.deleteById(id);
+	}
+
+	@Override
+	public Admin findByLogin(String login) {
+		// TODO Auto-generated method stub
+		return adminRepository.findByLogin(login);
+	}
+
+	@Override
+	public Admin insert(Admin admin) {
+		// TODO Auto-generated method stub
+		return adminRepository.insert(admin);
+	}
+	
+	
 }
