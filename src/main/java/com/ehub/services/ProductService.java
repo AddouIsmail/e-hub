@@ -8,7 +8,10 @@ import java.util.Iterator;
  * Created by Ismail on 30/01/2016.
  */
 public interface ProductService {
-    public Iterator findAll();
 
-    public Product save();
+    public Iterable findAll();
+
+    public Product getProductById(String id);
+
+    public Product save(Product product);
 }
