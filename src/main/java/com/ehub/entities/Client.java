@@ -12,15 +12,12 @@ public class Client  {
     private String id;
     private String firstName;
     private String lastName;
-    private String login;
     private String password;
     private String email;
     private Date birthDate;
     private String sex;
-    private String adress;
+    private String address;
     private String phoneNumber;
-    private String country;
-    private String city;
     private String picture;
 
     public String getId() {
@@ -45,14 +42,6 @@ public class Client  {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
-    }
-
-    public String getLogin() {
-        return login;
-    }
-
-    public void setLogin(String login) {
-        this.login = login;
     }
 
     public String getPassword() {
@@ -87,12 +76,12 @@ public class Client  {
         this.sex = sex;
     }
 
-    public String getAdress() {
-        return adress;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAdress(String adress) {
-        this.adress = adress;
+    public void setAddress(String adress) {
+        this.address = address;
     }
 
     public String getPhoneNumber() {
@@ -101,22 +90,6 @@ public class Client  {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
     }
 
     public String getPicture() {

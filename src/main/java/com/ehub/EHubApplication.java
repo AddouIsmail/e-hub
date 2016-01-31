@@ -112,14 +112,11 @@ public class EHubApplication implements CommandLineRunner{
 		clientRepository.deleteAll();
 		for(int i=0; i<100 ; i++){
 			cli.setId(""+i);
-			cli.setAdress("addresse client "+1);
+			cli.setAddress("addresse client "+1);
 			cli.setBirthDate(new Date());
-			cli.setCity("city "+i);
-			cli.setCountry("country "+i);
 			cli.setEmail("client"+i+"@gmail.com");
 			cli.setFirstName("firstname "+i);
 			cli.setLastName("lastname "+i);
-			cli.setLogin("login"+i);
 			cli.setPassword("password"+i);
 			cli.setPhoneNumber("+212 6 5645"+i);
 			cli.setPicture("user.jpg");
