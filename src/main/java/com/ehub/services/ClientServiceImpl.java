@@ -32,9 +32,9 @@ public class ClientServiceImpl  implements ClientService{
 	}
 
 	@Override
-	public Client findByLogin(String login) {
+	public Client findByEmail(String email) {
 		// TODO Auto-generated method stub
-		return clientRepository.findByLogin(login);
+		return clientRepository.findByEmail(email);
 	}
 
 	@Override
