@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.*;
  * Created by Ismail on 30/01/2016.
  */
 
+@CrossOrigin
 @RestController
+@RequestMapping("/product")
 public class ProductController {
 
     private ProductService productService;
@@ -20,27 +22,23 @@ public class ProductController {
     public void setProductService(ProductService productService) {
         this.productService = productService;
     }
-
-
-    @RequestMapping(value="/products",method= RequestMethod.GET)
+    @RequestMapping(method= RequestMethod.GET)
     public Iterable listProducts(){
         return productService.findAll();
     }
-    @RequestMapping(value="/products",method= RequestMethod.POST)
+    @RequestMapping(method= RequestMethod.POST)
     public Product insertProduct(Product product){
         return productService.insert(product);
     }
-
-    @RequestMapping(value="/product/{id}",method= RequestMethod.GET)
+    @RequestMapping(value="/{id}",method= RequestMethod.GET)
     public Product getProductById(@PathVariable String id){
         return productService.findById(id);
     }
-
-    @RequestMapping(value="/product",method=RequestMethod.PUT)
+    @RequestMapping(method=RequestMethod.PUT)
     public Product updateProduct(@RequestBody Product product){
         return productService.update(product);
     }
-    @RequestMapping(value="/product",method=RequestMethod.DELETE)
+    @RequestMapping(value="/{id}",method=RequestMethod.DELETE)
     public Long deleteProductById(@PathVariable String id){
         return productService.deleteById(id);
     }
