@@ -8,33 +8,32 @@ import org.springframework.web.bind.annotation.*;
 /**
  * Created by Ismail on 30/01/2016.
  */
+@CrossOrigin
 @RestController
+@RequestMapping("/orderline")
 public class OrderLinesController {
     private OrderLinesService orderLinesService;
-
     @Autowired
     public void setOrderLinesService(OrderLinesService orderLinesService) {
         this.orderLinesService = orderLinesService;
     }
-
-    @RequestMapping(value = "/orderLines",method = RequestMethod.GET)
+    @RequestMapping(method = RequestMethod.GET)
     public Iterable listOrderLines(){
        return orderLinesService.findAll();
     }
-
-    @RequestMapping(value="/orderLine/{id}",method = RequestMethod.GET)
+    @RequestMapping(value="/{id}",method = RequestMethod.GET)
     public OrderLines getOrderLineById(@PathVariable String id){
         return orderLinesService.findById(id);
     }
-    @RequestMapping(value = "/orderLine",method = RequestMethod.POST)
+    @RequestMapping(method = RequestMethod.POST)
     public OrderLines insertOrderLines(@RequestBody OrderLines orderLines){
         return orderLinesService.insert(orderLines);
     }
-    @RequestMapping(value = "/orderLine",method = RequestMethod.PUT)
+    @RequestMapping(method = RequestMethod.PUT)
     public OrderLines updateOrderLines(@RequestBody OrderLines orderLines){
         return orderLinesService.update(orderLines);
     }
-    @RequestMapping(value="/orderLine/{id}",method = RequestMethod.DELETE)
+    @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
     public Long gdeleteOrderLinesById(@PathVariable String id){
         return orderLinesService.deleteById(id);
     }
