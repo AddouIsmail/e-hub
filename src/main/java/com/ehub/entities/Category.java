@@ -10,6 +10,7 @@ public class Category {
     private String id;
     private String name;
     private String superCategory;
+    private String superSuperCategory;
 
     public String getSuperCategory() {
         return superCategory;
@@ -30,5 +31,13 @@ public class Category {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getSuperSuperCategory() {
+        return superSuperCategory;
+    }
+
+    public void setSuperSuperCategory(String superSuperCategory) {
+        this.superSuperCategory = superSuperCategory;
     }
 }

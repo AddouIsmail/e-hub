@@ -2,6 +2,8 @@ package com.ehub.entities;
 
 import org.springframework.data.annotation.Id;
 
+import java.util.List;
+
 /**
  * Created by Ismail on 30/01/2016.
  */
@@ -9,7 +11,7 @@ public class Product {
     @Id
     private String id;
     /** Logical foreign keys **/
-    private String idCategory;
+    private List<String> idCategory;
     private String idSupplier;
     /** -------------------- **/
     private String name;
@@ -28,11 +30,11 @@ public class Product {
         this.id = id;
     }
 
-    public String getIdCategory() {
+    public List<String> getIdCategory() {
         return idCategory;
     }
 
-    public void setIdCategory(String idCategory) {
+    public void setIdCategory(List<String> idCategory) {
         this.idCategory = idCategory;
     }
 
