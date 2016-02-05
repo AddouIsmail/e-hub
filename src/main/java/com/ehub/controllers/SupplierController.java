@@ -25,9 +25,9 @@ public class SupplierController {
     public Supplier getSupplierById(@PathVariable String id){
         return supplierService.findById(id);
     }
-    @RequestMapping(value="supplier",method = RequestMethod.GET)
-    public Supplier insertSupplier(Supplier supplier){
-        return supplierService.insert(supplier);
+    @RequestMapping(method = RequestMethod.POST)
+    public Supplier insertCategory(@RequestBody Supplier category){
+        return supplierService.insert(category);
     }
     @RequestMapping(method = RequestMethod.PUT)
     public Supplier updateSupplier(Supplier supplier){
