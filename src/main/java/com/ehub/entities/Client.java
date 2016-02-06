@@ -12,6 +12,7 @@ public class Client  {
     private String id;
     private String firstName;
     private String lastName;
+    private String login;
     private String password;
     private String email;
     private Date birthDate;
@@ -19,6 +20,14 @@ public class Client  {
     private String address;
     private String phoneNumber;
     private String picture;
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
     public String getId() {
         return id;
