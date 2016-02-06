@@ -30,7 +30,7 @@ public class SupplierController {
         return supplierService.insert(category);
     }
     @RequestMapping(method = RequestMethod.PUT)
-    public Supplier updateSupplier(Supplier supplier){
+    public Supplier updateSupplier(@RequestBody Supplier supplier){
         return supplierService.update(supplier);
     }
     @RequestMapping(value="/{id}",method = RequestMethod.DELETE)
