@@ -59,7 +59,7 @@ public class EHubApplication implements CommandLineRunner{
 			s = new Supplier();
 			s.setAddress("Adresse "+i);
 			s.setName("Name "+i);
-			s.setPhoneNumber("PhoneNumber +212 6 5365"+i);
+			s.setPhoneNumber("+212 6 5365"+i);
 			supplierRepository.insert(s);
 		}
 
