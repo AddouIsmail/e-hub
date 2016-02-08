@@ -1,19 +1,23 @@
 package com.ehub.entities;
 
-import org.springframework.data.annotation.Id;
-
 import java.util.List;
+import org.springframework.data.annotation.Id;
 
 /**
  * Created by Ismail on 30/01/2016.
  */
 public class Product {
+
     @Id
     private String id;
-    /** Logical foreign keys **/
+    /**
+     * Logical foreign keys *
+     */
     private List<String> idCategory;
     private String idSupplier;
-    /** -------------------- **/
+    /**
+     * -------------------- *
+     */
     private String name;
     private String description;
     private double buyPrice;
@@ -21,6 +25,15 @@ public class Product {
     private int quantity;
     private double shippedPrice;
     private String brand;
+    private List<String> images;
+
+    public List<String> getImages() {
+        return images;
+    }
+
+    public void setImages(List<String> images) {
+        this.images = images;
+    }
 
     public String getId() {
         return id;
@@ -101,4 +114,10 @@ public class Product {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" + "id=" + id + ", idCategory=" + idCategory + ", idSupplier=" + idSupplier + ", name=" + name + ", description=" + description + ", buyPrice=" + buyPrice + ", discount=" + discount + ", quantity=" + quantity + ", shippedPrice=" + shippedPrice + ", brand=" + brand + '}';
+    }
+
 }

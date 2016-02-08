@@ -40,7 +40,8 @@ public class ProductController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public Product insertProduct(Product product) {
+    public Product insertProduct(@RequestBody Product product) {
+        System.out.println(product);
         return productService.insert(product);
     }
 
@@ -61,13 +62,18 @@ public class ProductController {
 
     @RequestMapping(value = "/file", method = RequestMethod.POST)
     @ResponseBody
-    public ResponseEntity<?> save(@RequestParam("uploadfile") MultipartFile uploadfile) {
+    public ResponseEntity<?> save(@RequestParam("uploadfile") MultipartFile uploadfile, @RequestParam("name") String name) {
         try {
             // Get the filename and build the local file path (be sure that the
             // application have write permissions on such directory)
             String filename = uploadfile.getOriginalFilename();
-            String directory = "/";
+            System.out.println(name);
+            new File("G:\\" + name).mkdir();
+            String directory = "G:\\" + name;
             String filepath = Paths.get(directory, filename).toString();
+            Product p = productService.findById(name);
+            p.getImages().add(filename);
+            productService.update(p);
             // Save the file locally
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filepath)));
             stream.write(uploadfile.getBytes());
