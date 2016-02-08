@@ -9,4 +9,5 @@ import org.springframework.data.mongodb.repository.MongoRepository;
 public interface ClientRepository extends MongoRepository<Client, String> {
 	public Long deleteById(String id);
 	public Client findByEmail(String email);
+	public Client findByLogin(String login);
 }

@@ -133,6 +133,7 @@ public class EHubApplication implements CommandLineRunner{
 			cli.setPhoneNumber("+212 6 5645"+i);
 			cli.setPicture("user.jpg");
 			cli.setSex("M");
+			cli.setLogin("login"+i);
 			clientRepository.insert(cli);
 		}
 	}

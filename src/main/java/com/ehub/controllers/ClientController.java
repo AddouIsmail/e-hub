@@ -30,6 +30,10 @@ public class ClientController {
     public Client getClientById(@PathVariable String id){
 	return clientService.findById(id);
 	}
+	@RequestMapping(value = "/authentification/{login}", method = RequestMethod.GET)
+	public Client getClientByLogin(@PathVariable String login){
+		return clientService.findByLogin(login);
+	}
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public Long deleteClientById(@PathVariable String id){
 	return clientService.deleteById(id);

@@ -8,7 +8,9 @@ import com.ehub.repositories.ClientRepository;
 @Service
 public class ClientServiceImpl  implements ClientService{
 	private ClientRepository clientRepository;
-    @Autowired
+
+
+	@Autowired
 	public void setClientRepository(ClientRepository clientRepository) {
 		this.clientRepository = clientRepository;
 	}
@@ -41,6 +43,11 @@ public class ClientServiceImpl  implements ClientService{
 	public Long deleteById(String id) {
 		// TODO Auto-generated method stub
 		return clientRepository.deleteById(id);
+	}
+
+	@Override
+	public Client findByLogin(String login) {
+		return clientRepository.findByLogin(login);
 	}
 
 	@Override
