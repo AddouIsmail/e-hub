@@ -70,9 +70,9 @@ public class ProductController {
             System.out.println(name);
             new File("G:\\" + name).mkdir();
             String directory = "G:\\" + name;
-            String filepath = Paths.get(directory, filename).toString();
+            String filepath = Paths.get(directory, filename.trim()).toString();
             Product p = productService.findById(name);
-            p.getImages().add(filename);
+            p.getImages().add(filename.trim());
             productService.update(p);
             // Save the file locally
             BufferedOutputStream stream = new BufferedOutputStream(new FileOutputStream(new File(filepath)));
